@@ -59,6 +59,10 @@ body {
   padding: 20px;
 }
 
+.listItemsImage {
+  width: 100px;
+}
+
 .footer {
   background-color: #1a252f;
   padding: 16px 20px;
