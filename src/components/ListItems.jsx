@@ -1,7 +1,11 @@
+import { Link } from "react-router-dom";
+
+
 function ListItems({ product, onDelete }) {
   const isLowStock = product.stock < 10;
 
   return (
+    <Link to={`/products/${product.id}`}>
     <li className="list-item">
       <img className="list-item-image" src={product.thumbnail} alt={product.title} />
 
@@ -17,6 +21,7 @@ function ListItems({ product, onDelete }) {
         Delete
       </button>
     </li>
+    </Link>
   );
 }
 

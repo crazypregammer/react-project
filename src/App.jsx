@@ -8,6 +8,7 @@ import Dashboard from "./pages/Dashboard";
 import { Routes, Route } from "react-router-dom";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
+import ItemDetails from "./pages/ItemDetails";
 
 function App() {
   const [products, setProducts] = useState(productsData);
@@ -30,6 +31,7 @@ function App() {
               }
             />
             <Route path="/about" element={<About />} />
+            <Route path="/products/:productId" element={<ItemDetails products={productsData} />}/>
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
