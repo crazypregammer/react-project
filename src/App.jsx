@@ -1,10 +1,13 @@
-import './App.css'
-import Footer from './components/Footer'
-import Sidebar from './components/Sidebar';
-import Navbar  from './components/Navbar';
-import List from './components/List';
-import productsData from './resources/products.json';
+import "./App.css";
+import Footer from "./components/Footer";
+import Sidebar from "./components/Sidebar";
+import Navbar from "./components/Navbar";
+import productsData from "./resources/products.json";
 import { useState } from "react";
+import Dashboard from "./pages/Dashboard";
+import { Routes, Route } from "react-router-dom";
+import About from "./pages/About";
+import NotFound from "./pages/NotFound";
 
 function App() {
   const [products, setProducts] = useState(productsData);
@@ -19,10 +22,16 @@ function App() {
       <div className="app-body">
         <Sidebar />
         <main className="content">
-          <h1>Home</h1>
-          <p>Welcome to our shop.</p>
-
-          <List products={products} onDelete={handleDelete} />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Dashboard products={products} onDelete={handleDelete} />
+              }
+            />
+            <Route path="/about" element={<About />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </main>
       </div>
       <Footer />
