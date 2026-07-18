@@ -1,4 +1,6 @@
 function ListItems({ product, onDelete }) {
+  const isLowStock = product.stock < 10;
+
   return (
     <li className="list-item">
       <img className="list-item-image" src={product.thumbnail} alt={product.title} />
@@ -6,7 +8,9 @@ function ListItems({ product, onDelete }) {
       <div className="list-item-info">
         <h3>{product.title}</h3>
         <p className="price">{product.price} €</p>
-        <p className="stock">Stock: {product.stock}</p>
+        <p className={isLowStock ? "stock stock-low" : "stock"}>
+          {isLowStock ? "⚠️" : "✅"} Stock: {product.stock}
+        </p>
       </div>
 
       <button className="delete-btn" onClick={() => onDelete(product.id)}>

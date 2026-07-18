@@ -115,6 +115,11 @@ body {
   color: #555;
 }
 
+.stock-low {
+  color: #c0392b;
+  font-weight: bold;
+}
+
 /* Delete button */
 .delete-btn {
   background-color: #ff4d4d;
