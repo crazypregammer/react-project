@@ -6,7 +6,7 @@ function ItemDetails(props) {
 
   // Find product inside props.products
   const foundProduct = props.products.find((oneProduct) => {
-    return oneProduct.id == productId;
+    return oneProduct.id === Number(productId);
   });
 
   if (!foundProduct) {

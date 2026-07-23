@@ -82,6 +82,15 @@ body {
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
+/* Link wrapping the image and info */
+.list-item-link {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-grow: 1;
+  color: inherit;
+}
+
 /* Image */
 .list-item-image {
   width: 100px;

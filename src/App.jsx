@@ -31,7 +31,10 @@ function App() {
               }
             />
             <Route path="/about" element={<About />} />
-            <Route path="/products/:productId" element={<ItemDetails products={productsData} />}/>
+            <Route
+              path="/products/:productId"
+              element={<ItemDetails products={products} />}
+            />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
